@@ -1,6 +1,5 @@
 import java.util.ArrayList;
-import java.util.Scanner;
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+import java.io.IOException;
 import java.io.FileReader;
 import java.io.BufferedReader;
 
@@ -10,9 +9,7 @@ public class Main
 
     public static void main(String args[]) throws IOException
     {               
-        Scanner input = new Scanner(System.in); 
-
-        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX         //calls method
+        getDataFromTextFile();          //calls method
 
         for(University x : uniList) {    //example of enhanced for loop
             System.out.println(x);
@@ -26,9 +23,9 @@ public class Main
         String line;
 
         while ((line = br.readLine()) != null ) {
-            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  // splits lines by comma into a String array called values
-            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX      // create a new University object with data from values array
-            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX           //add the object to the arrayList
+            String[] values = line.split(",");  // splits lines by comma into a String array called values
+            University uni = new University(Integer.parseInt(values[0]),values[1], values[2]);      // create a new University object with data from values array
+            uniList.add(uni);           //add the object to the arrayList
         }
         br.close();
     }
