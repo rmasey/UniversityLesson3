@@ -1,2 +1,2 @@
-1, bath, uk,
-2, manchester, uk,
+1, University of Bath, UK
+2, University of Manchester, UK
